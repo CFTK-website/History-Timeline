@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Timeline Card Builder</title>
+        <link href="../css/reset.css" rel="stylesheet" type="text/css">
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,600,700|Inconsolata" rel="stylesheet">
+        <link href="../css/highlight.css" type="text/css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/97ce0e4483.js"></script>
+    </head>
+    <body>
+        
+        <div id="wrapper" class="build">
+            <div class="padding">
+                <h1>CFTK Timeline Card Building Tool <i class="fa fa-cogs"></i></h1>
+                <p>Use this tool to generate the HTML code for a card that can be pasted into the main index.html. Just input the required information and click the 'Generate' button</p>
+                <br>
+                <div class="build_dark build_frame">
+                    <h1>Header &nbsp;<i class="fa fa-calendar-check-o"></i></h1>
+                    <input id="build_year" type="number" placeholder="Year (required)">
+                    <input id="build_photo" type="text" placeholder="Banner photo Flickr BBC embed code (recommended)">
+                    <input id="build_flickr" type="text" placeholder="Flickr album URL (recommended)">
+                    <div id="img_preview_bg"></div>
+                    <div id="img_preview"></div>
+                </div>
+                <div class="build_light build_frame">
+                    <h1>Content &nbsp;<i class="fa fa-list"></i></h1>
+                    <p>Content should be in the form of a bulleted list, no period at the end of each entry</p>
+                    <span style="font-size: 0; text-align: center;">
+                        <div class="build_button" id="b_left"><i class="fa fa-plus"></i></div>
+                        <div class="build_button" id="b_right"><i class="fa fa-minus"></i></div>
+                    </span>
+                    <span id="content_input">
+                        <input type="text" class="litem" placeholder="List item (required)">
+                    </span>
+                </div>
+                <br>
+                <div class="build_button" id="generate">Generate &nbsp;<i class="fa fa-wrench"></i></div>
+                <br>
+                <br>
+                <h1 class="hidden">HTML Output &nbsp;<i class="fa fa-code"></i></h1>
+                <pre class="html hidden" id="output">
+                    
+                </pre>
+                <br>
+                <h1 class="hidden">Preview &nbsp;<i class="fa fa-eye"></i></h1>
+                <div class="hidden" id="build_preview">
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="../js/build.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <!--USES HIGHLIGHT.JS AND ARDUINO-LIGHT.CSS THEME TO PRETTIFY CODE OUTPUT, SEE NOTES IN BUILD.JS-->
+
+    </body>
+</html>
